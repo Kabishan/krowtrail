@@ -28,7 +28,7 @@ public class UsersActivity extends AppCompatActivity {
     setContentView(R.layout.activity_users);
     setTitle("Users");
 
-    ListView usersListView = (ListView) findViewById(R.id.usersListView);
+    final ListView usersListView = findViewById(R.id.usersListView);
     usersListView.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE);
 
     adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_checked, users);
@@ -40,8 +40,19 @@ public class UsersActivity extends AppCompatActivity {
       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         CheckedTextView checkedTextView = (CheckedTextView) view;
 
-        if (checkedTextView.isChecked()) Log.i("Info", "Checked");
-        else Log.i("Info", "Not checked");
+        if (checkedTextView.isChecked()) {
+          Log.i("Info", "Checked");
+          ParseUser.getCurrentUser().add("isFollowing", users.get(position));
+        }
+        else {
+          Log.i("Info", "Not checked");
+          ParseUser.getCurrentUser().getList("isFollowing").remove(users.get(position));
+          List remainingUsers = ParseUser.getCurrentUser().getList("isFollowing");
+          ParseUser.getCurrentUser().remove("isFollowing");
+          ParseUser.getCurrentUser().put("isFollowing", remainingUsers);
+        }
+
+        ParseUser.getCurrentUser().saveInBackground();
       }
     });
 
@@ -55,6 +66,12 @@ public class UsersActivity extends AppCompatActivity {
         if (e == null && objects.size() > 0) {
           for (ParseUser user : objects) users.add(user.getUsername());
           adapter.notifyDataSetChanged();
+
+          for (String username : users) {
+            if (ParseUser.getCurrentUser().getList("isFollowing").contains(username)) {
+              usersListView.setItemChecked(users.indexOf(username), true);
+            }
+          }
         }
       }
     });
