@@ -920,6 +920,10 @@
         "source": "/Users/kabishan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/befc80f4340885f953dd7b1f74a17b66/res/drawable-xhdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
+        "merged": "/Users/kabishan/Downloads/Parse-Server-Starter-Project/ParseStarterProject/build/intermediates/res/merged/debug/layout_activity_users.xml.flat",
+        "source": "/Users/kabishan/Downloads/Parse-Server-Starter-Project/ParseStarterProject/src/main/res/layout/activity_users.xml"
+    },
+    {
         "merged": "/Users/kabishan/Downloads/Parse-Server-Starter-Project/ParseStarterProject/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "/Users/kabishan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/befc80f4340885f953dd7b1f74a17b66/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },

@@ -7,6 +7,7 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 package com.parse.starter;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -26,9 +27,18 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
     setTitle("Kaw Kaw");
+    redirectUser();
 
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
+  }
+
+  protected void redirectUser() {
+    if (ParseUser.getCurrentUser() != null) {
+      Intent intent = new Intent(getApplicationContext(), UsersActivity.class);
+      startActivity(intent);
+    }
   }
 
   protected void signUpLogin (View view) {
@@ -41,8 +51,10 @@ public class MainActivity extends AppCompatActivity {
     ParseUser.logInInBackground(userName, password, new LogInCallback () {
       @Override
       public void done (ParseUser user, ParseException e) {
-        if (e == null) Log.i("Login", "Success!");
-        else {
+        if (e == null) {
+          redirectUser();
+          Log.i("Login", "Success!");
+        } else {
           ParseUser newUser = new ParseUser();
 
           newUser.setUsername(userName);
@@ -51,7 +63,10 @@ public class MainActivity extends AppCompatActivity {
           newUser.signUpInBackground(new SignUpCallback() {
               @Override
               public void done (ParseException e) {
-                if (e == null) Log.i("Sign Up", "Success!");
+                if (e == null) {
+                  redirectUser();
+                  Log.i("Sign Up", "Success!");
+                }
                 else Toast.makeText(MainActivity.this, e.getMessage().split("Exception: ")[1], Toast.LENGTH_SHORT).show();
               }
           });
