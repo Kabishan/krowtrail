@@ -1,4 +1,4 @@
-# Kaw Kaw
+# Krow Trail
 
 An ominous, yet intelligent alternative to Twitter
 
