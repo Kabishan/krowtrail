@@ -1188,6 +1188,10 @@
         "source": "/Users/kabishan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/befc80f4340885f953dd7b1f74a17b66/res/drawable-xxhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/kabishan/Downloads/Parse-Server-Starter-Project/ParseStarterProject/build/intermediates/res/merged/debug/menu_krow_menu.xml.flat",
+        "source": "/Users/kabishan/Downloads/Parse-Server-Starter-Project/ParseStarterProject/src/main/res/menu/krow_menu.xml"
+    },
+    {
         "merged": "/Users/kabishan/Downloads/Parse-Server-Starter-Project/ParseStarterProject/build/intermediates/res/merged/debug/layout_abc_dialog_title_material.xml.flat",
         "source": "/Users/kabishan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/befc80f4340885f953dd7b1f74a17b66/res/layout/abc_dialog_title_material.xml"
     },

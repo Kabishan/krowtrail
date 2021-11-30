@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   protected void redirectUser() {
+    // Redirect user after logging in
     if (ParseUser.getCurrentUser() != null) {
       Intent intent = new Intent(getApplicationContext(), UsersActivity.class);
       startActivity(intent);
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
     final String userName = userNameEditText.getText().toString();
     final String password = passwordEditText.getText().toString();
+
+    // Login logic
 
     ParseUser.logInInBackground(userName, password, new LogInCallback () {
       @Override
@@ -67,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                   redirectUser();
                   Log.i("Sign Up", "Success!");
                 }
-                else Toast.makeText(MainActivity.this, e.getMessage().split("Exception: ")[1], Toast.LENGTH_SHORT).show();
+                else Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
               }
           });
         }
