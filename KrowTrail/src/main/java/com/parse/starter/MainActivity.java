@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
   protected void redirectUser() {
     // Redirect user after logging in
     if (ParseUser.getCurrentUser() != null) {
-      Intent intent = new Intent(getApplicationContext(), UsersActivity.class);
+      Intent intent = new Intent(getApplicationContext(), FeedActivity.class);
       startActivity(intent);
     }
   }
