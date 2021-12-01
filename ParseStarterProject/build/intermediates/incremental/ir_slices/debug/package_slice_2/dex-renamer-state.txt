@@ -1,4 +1,4 @@
-#Mon Nov 29 19:26:56 EST 2021
+#Tue Nov 30 20:28:57 EST 2021
 base.0=/Users/kabishan/Downloads/Parse-Server-Starter-Project/ParseStarterProject/build/intermediates/transforms/dexMerger/debug/2
 path.0=classes.dex
 renamed.0=classes.dex

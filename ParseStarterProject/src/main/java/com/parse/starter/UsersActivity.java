@@ -59,7 +59,6 @@ public class UsersActivity extends AppCompatActivity {
           trail.put("username", ParseUser.getCurrentUser().getUsername());
 
           // Save the trail object
-
           trail.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
@@ -84,9 +83,14 @@ public class UsersActivity extends AppCompatActivity {
       builder.show();
 
     } else if (item.getItemId() == R.id.logout) {
+      // Logout and redirect back to sign in
       ParseUser.logOut();
 
       Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+      startActivity(intent);
+    } else if (item.getItemId() == R.id.feed) {
+      // Go to Feed
+      Intent intent = new Intent(getApplicationContext(), FeedActivity.class);
       startActivity(intent);
     }
 

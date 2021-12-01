@@ -40,6 +40,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.parse.starter.UsersActivity" />
+        <activity android:name="com.parse.starter.FeedActivity" />
     </application>
 
 </manifest>
