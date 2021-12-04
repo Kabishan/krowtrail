@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
     ParseUser.logInInBackground(userName, password, new LogInCallback () {
       @Override
       public void done (ParseUser user, ParseException e) {
+
         if (e == null) {
+          Log.i(userName, password);
           redirectUser();
           Log.i("Login", "Success!");
         } else {

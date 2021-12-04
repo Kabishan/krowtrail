@@ -5,10 +5,12 @@
       <map>
         <entry key="KrowTrail/src/main/res/layout/activity_feed.xml" value="0.25677083333333334" />
         <entry key="KrowTrail/src/main/res/layout/activity_main.xml" value="0.13177083333333334" />
+        <entry key="KrowTrail/src/main/res/layout/activity_users.xml" value="0.165" />
         <entry key="KrowTrail/src/main/res/menu/krow_menu.xml" value="0.25677083333333334" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />
