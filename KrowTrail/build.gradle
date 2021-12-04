@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 31
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '30.0.2'
 
     defaultConfig {
         applicationId "com.parse.starter"
@@ -11,9 +11,6 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
-    }
-    dexOptions {
-        javaMaxHeapSize "4g"
     }
     buildTypes {
         release {

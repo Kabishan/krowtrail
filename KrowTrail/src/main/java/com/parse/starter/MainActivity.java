@@ -1,12 +1,5 @@
-/*
- * Copyright (c) 2015-present, Parse, LLC.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
 package com.parse.starter;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -42,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
-  protected void signUpLogin (View view) {
+  public void signUpLogin (View view) {
     EditText userNameEditText = findViewById(R.id.userNameEditText);
     EditText passwordEditText = findViewById(R.id.passwordEditText);
 
@@ -50,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     final String password = passwordEditText.getText().toString();
 
     // Login logic
-
     ParseUser.logInInBackground(userName, password, new LogInCallback () {
       @Override
       public void done (ParseUser user, ParseException e) {
@@ -77,5 +69,4 @@ public class MainActivity extends AppCompatActivity {
       }
     });
   }
-
 }
